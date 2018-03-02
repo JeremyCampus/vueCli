@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <img src="./assets/logo.png" width="200px">
+    <h3> Machines à café n°1 </h3>    {{ machine1 }}
+    <h3 v-if="machine1"><img src="https://startupsavant.com/wp-content/uploads/2014/01/Validate-your-business-idea.png" alt="Smiley face" height="50px"></h3>
+    <h3 v-else><img src="https://alyssabethancourt.files.wordpress.com/2014/07/no.gif" alt="Smiley face" height="50px"></h3>
+    <button @click="machine1 = !machine1" :aria-expanded="machine1 ? 'true' : 'false'">
+    Activer/Désactiver 
+    </button> </br></br></br>
+    <h2>--------------------------------------------------------------------------</h2></br>
+
+
+    <h3> Machines à café n°2 </h3>    {{ machine2 }}
+    <h3 v-if="machine2"><img src="https://startupsavant.com/wp-content/uploads/2014/01/Validate-your-business-idea.png" alt="Smiley face" height="50px"></h3>
+    <h3 v-else><img src="https://alyssabethancourt.files.wordpress.com/2014/07/no.gif" alt="Smiley face" height="50px"></h3>
+    <button @click="machine2 = !machine2" :aria-expanded="machine2 ? 'true' : 'false'">
+    Activer/Désactiver 
+    </button></br></br></br>
+  
   </div>
 </template>
 
@@ -24,8 +25,10 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      machine1: true,
+      machine2: false
     }
+    
   }
 }
 </script>
